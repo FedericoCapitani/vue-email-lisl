@@ -12,7 +12,10 @@
 
     <div id="app">
         <h1>Lista Emails</h1>
-        <div v-if="my_data" v-for="element in my_emails">{{element.response}}</div>
+        <button @click="waitForList()">Premi per vedere la lista</button>
+        <div v-if="my_data" v-for="element in my_emails" v-show="wait">
+            {{element.response}}
+        </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
