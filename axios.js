@@ -4,6 +4,7 @@ const app = new Vue({
         mail: '',
         my_data: null,
         my_emails: [],
+        error: null,
         wait: false,
         timeout: ''
     },
@@ -22,6 +23,9 @@ const app = new Vue({
                 console.log(this);
                 this.my_data = response.data
                 this.my_emails.push(response.data)
+            })
+            .catch(error => {
+                console.error(error);
             })
             
         }
